@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f3f1fd;
+  display: flex;
+}
+
+.nav {
+  width: 300px;
+  min-width: 210px;
+  height: 100%;
+  background-color: #ffff;
+
+  .navHead {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navMenu {
+    display: none;
+    margin: 24px 15px 0 15px;
+  }
+
+  .navTitle {
+    text-align: center;
+    margin-top: 19px;
+    color: #0d0453;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+  }
+}
+
+li {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  font-size: larger;
+  padding: 10px 0 10px 11px;
+  color: #5f6995;
+  border-left: 4px solid #ffff;
+  height: 49px;
+  transition: linear 0.2s;
+
+  span {
+    padding-left: 10px;
+  }
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: rgba(21, 6, 147, 0.05);
+}
+
+.container_InputBlock-ResultBlock {
+  display: flex;
+  width: 100%;
+}
+
+.inputBlock {
+  margin-left: 2px;
+  width: 73%;
+  background-color: #ffff;
+}
+
+.active {
+  color: #0d0453;
+  background: rgba(21, 6, 147, 0.05);
+  border-left: 4px solid #0d0453;
+}
+
+.MuiFormControl-root {
+  width: 450px;
+}
+
+.resultBlock {
+  background-color: #09033a;
+  width: 450px;
+  min-width: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .active {
+    background-color: #160792;
+    color: #ffff;
+  }
+}
+
+.containerResult {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resultBlock__container {
+  display: flex;
+  justify-content: center;
+  width: 44%;
+  background-color: #fff;
+  margin: 80px 0 40px 0;
+}
+
+.resultBlock__qrCode {
+  margin: 5px 0 5px 0;
+  width: 114px;
+  height: 114px;
+  display: flex;
+  justify-content: center;
+}
+
+.qrCode canvas {
+  width: 114px;
+  height: 114px;
+}
+
+.MuiAccordion-root {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.MuiButtonBase-root {
+  background-color: #5c51f3;
+}
+
+.MuiTypography-root {
+  display: flex;
+  justify-content: space-around;
+}
+
+.css-ahj2mt-MuiTypography-root {
+  font-family: "Kanit", sans-serif;
+  color: #e1e3ed;
+}
+
+.patternButtom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.resultBlock__color {
+  margin-top: 30px;
+}
+
+.qrCode__backgroundSvg {
+  background-color: #0f0566;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: linear 0.3s;
+}
+
+.qrCode__backgroundSvg.active {
+  border-left: 0;
+}
+
+.qrCode__backgroundSvg:hover {
+  background-color: #160792;
+  cursor: pointer;
+}
+
+.patternButton svg,
+.logoButton svg {
+  width: 30px;
+  height: 30px;
+}
+
+.resultBlock__format {
+  margin-top: 0.2em;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  transition: linear 0.3s;
+
+  button {
+    background-color: #0f0566;
+  }
+  button:hover {
+    background-color: #160792;
+  }
+}
+
+.resultBlock__download {
+  margin: 70px 0 20px 0;
+  display: flex;
+  justify-content: center;
+  button {
+    width: 190px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav {
+    width: 56px;
+    min-width: 56px;
+  }
+
+  .nav .navHead {
+    display: flex;
+    justify-content: normal;
+  }
+
+  .nav .navMenu {
+    display: block;
+    overflow: hidden;
+    background: none;
+    border: none;
+  }
+
+  .nav .navMenu:hover {
+    cursor: pointer;
+  }
+
+  .navTitle {
+    position: absolute;
+    left: 60px;
+  }
+
+  .resultBlock__container {
+    width: 63%;
+  }
+
+  .resultBlock {
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: absolute;
+    width: 211px;
+    min-width: 210px;
+    border-right: 1px solid #f3f1fd;
+    box-shadow: 0px 5px 10px rgb(0 0 0 / 0%), 0px 6px 8px rgb(0 0 0 / 12%),
+      0px 4px 8px rgb(0 0 0 / 14%);
+  }
+
+  .navMenu {
+    position: absolute;
+    left: 10;
+  }
+
+  .nav .navMenu {
+    margin: 24px 6px 0 6px;
+  }
+  .nav ul {
+    width: 210px;
+    position: absolute;
+    background: white;
+    z-index: 1;
+  }
+
+  .navTitle {
+    margin-left: -20px;
+  }
+
+  .inputBlock {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  form button {
+    min-width: 135px !important;
+    max-width: 190px !important;
+  }
+
+  .containerResult {
+    width: 193px;
+  }
+
+  .resultBlock {
+    width: 100%;
+    min-width: 280px;
+    height: 100vh;
+  }
+
+  @media screen and (max-width: 480px) {
+    .nav {
+      width: 100%;
+    }
+
+    .nav ul {
+      width: 80%;
+    }
+
+    .inputBlock {
+      padding-top: 92px;
+    }
+
+    .resultBlock {
+      position: absolute;
+    }
+  }
+}

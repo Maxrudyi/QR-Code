@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import "./Components/Css/App.scss";
+import React, { useState, useEffect } from "react";
+import Nav from "./Components/Nav";
+import InputBlock from "./Components/InputBlock";
+import ResultBlock from "./Components/ResultBlock";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
-function App() {
+const App = () => {
+  const [status, setStatus] = useState("website");
+  const [patternStatus, setPatternStatus] = useState("L");
+  const [qrText, setQrText] = useState("https://github.com/Maxrudyi");
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [showResults, setShowResults] = useState(true);
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth } = window;
+    return { innerWidth };
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="container">
+        <Nav
+          setStatus={setStatus}
+          status={status}
+          windowSize={windowSize}
+          showResults={showResults}
+          setShowResults={setShowResults}
+        />
+        <div
+          className="container_InputBlock-ResultBlock"
+          style={
+            windowSize.innerWidth < 481
+              ? { display: "block" }
+              : { display: "flex" }
+          }
         >
-          Learn React
-        </a>
-      </header>
+          <InputBlock setQrText={setQrText} status={status} API_KEY={API_KEY} />
+          <ResultBlock
+            patternStatus={patternStatus}
+            setPatternStatus={setPatternStatus}
+            qrText={qrText}
+            setQrText={setQrText}
+          />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

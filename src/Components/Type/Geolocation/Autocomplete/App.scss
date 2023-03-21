@@ -1,0 +1,42 @@
+.containerInput {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+
+.input label {
+  font-weight: 500;
+  color: #100b32;
+}
+
+.suggestions {
+  position: absolute;
+  background: #fff;
+  width: 65.5%;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  left: 15px;
+  top: 90px;
+}
+
+.listItem {
+  padding: 10px 15px;
+  border-left: 0;
+  cursor: pointer;
+  font-size: 14px;
+  strong {
+    padding-right: 10px;
+  }
+}
+
+.listItem:hover {
+  background-color: #efefef;
+}
+
+.geolocationMap {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,34 @@
+.geolocation {
+  height: 100%;
+  margin: auto;
+  display: flex;
+
+  position: relative;
+  padding-top: 30px;
+  flex-direction: column;
+  width: 70%;
+
+  .MuiFormControl-root {
+    width: 100%;
+  }
+
+  button {
+    margin: 25px auto;
+  }
+}
+
+.geolocationContainer {
+  position: relative;
+}
+
+@media screen and (max-width: 1024px) {
+  .geolocationMap > div {
+    height: 290px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .geolocation {
+    padding: 0;
+  }
+}
